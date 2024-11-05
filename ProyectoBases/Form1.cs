@@ -59,6 +59,7 @@ namespace ProyectoBases
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //el chavo es mejor que breaking bad
             string usuario = txtUsuario.Text;
             string contraseña= txtContrasenia.Text;
             // Crear una instancia de LoginHelper
