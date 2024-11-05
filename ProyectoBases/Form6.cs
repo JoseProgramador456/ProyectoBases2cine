@@ -385,7 +385,7 @@ namespace ProyectoBases
                         // Llamar al método para registrar en la bitácora
                         int idBitacoraTransaccion = ObtenerSiguienteIdBitacora(); // Método para obtener el siguiente ID para la bitácora
                         RegistrarCompraEnBitacora(idBitacoraTransaccion, asientosComprados, idSala, nombreSala, nombrePelicula, sesion, "");
-                        
+                        RegistrarVentaAsientos(nuevoIdTransaccion, asientosSeleccionados, idSesion,siguienteId);
                         // Remover todos los asientos comprados de la vista, incluyendo el último
                         foreach (var asiento in asientosSeleccionados)
                         {
@@ -579,10 +579,10 @@ namespace ProyectoBases
             Form5 form5 = new Form5();
             form5.ShowDialog();
         }
-
+        int nuevoIdTransaccion = 0;
         private int RegistrarTransaccion(int idTipoAsignacion)
         {
-            int nuevoIdTransaccion = 0;
+            
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -597,8 +597,8 @@ namespace ProyectoBases
 
                     // Insertar la nueva transacción
                     string queryInsert = @"
-                INSERT INTO Transaccion (IdTransaccion, IdTipoAsignacion, Fecha)
-                VALUES (@IdTransaccion, @IdTipoAsignacion, @Fecha)";
+                    INSERT INTO Transaccion (IdTransaccion, IdTipoAsignacion, Fecha)
+                    VALUES (@IdTransaccion, @IdTipoAsignacion, @Fecha)";
 
                     SqlCommand commandInsert = new SqlCommand(queryInsert, connection);
                     commandInsert.Parameters.AddWithValue("@IdTransaccion", nuevoIdTransaccion);
@@ -635,8 +635,8 @@ namespace ProyectoBases
 
                 // Construimos el comando SQL
                 string query = @"
-        INSERT INTO BitacoraTransaccion (IdBitacoraTransaccion, IdTransaccion, FechaRegistro, Usuario, Accion, DatoViejo, DatoNuevo)
-        VALUES (@IdBitacoraTransaccion, @IdTransaccion, @FechaRegistro, @Usuario, @Accion, @DatoViejo, @DatoNuevo)";
+                INSERT INTO BitacoraTransaccion (IdBitacoraTransaccion, IdTransaccion, FechaRegistro, Usuario, Accion, DatoViejo, DatoNuevo)
+                VALUES (@IdBitacoraTransaccion, @IdTransaccion, @FechaRegistro, @Usuario, @Accion, @DatoViejo, @DatoNuevo)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -644,9 +644,9 @@ namespace ProyectoBases
 
                     // Asignar los parámetros
                     command.Parameters.AddWithValue("@IdBitacoraTransaccion", idBitacoraTransaccion);
-                    command.Parameters.AddWithValue("@IdTransaccion", idTransaccion);
+                    command.Parameters.AddWithValue("@IdTransaccion", nuevoIdTransaccion);
                     command.Parameters.AddWithValue("@FechaRegistro", DateTime.Now);
-                    command.Parameters.AddWithValue("@Usuario", usuario);
+                    command.Parameters.AddWithValue("@Usuario", usuario = "Cajero");
                     command.Parameters.AddWithValue("@Accion", "compra_boletos");
                     command.Parameters.AddWithValue("@DatoViejo", datoViejo);
                     command.Parameters.AddWithValue("@DatoNuevo", datoNuevo);
@@ -688,7 +688,7 @@ namespace ProyectoBases
 
             return siguienteId;
         }
-        private void RegistrarVentaAsientos(int idTransaccion, List<(string fila, int numero)> asientosComprados, int idSesion)
+        private void RegistrarVentaAsientos(int idTransaccion, List<(string fila, int numero)> asientosComprados, int idSesion, int idventaasiento)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -706,11 +706,12 @@ namespace ProyectoBases
                     {
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
+                            // Obtener el siguiente IdVentaAsiento
                             int idVentaAsiento = ObtenerSiguienteIdVentaAsiento();
 
                             // Asignar los parámetros
-                            command.Parameters.AddWithValue("@IdVentaAsiento", idVentaAsiento);
-                            command.Parameters.AddWithValue("@IdTransaccion", idTransaccion);
+                            command.Parameters.AddWithValue("@IdVentaAsiento", siguienteId);
+                            command.Parameters.AddWithValue("@IdTransaccion", nuevoIdTransaccion);
                             command.Parameters.AddWithValue("@IdSesion", idSesion);
                             command.Parameters.AddWithValue("@IdAsiento", idAsiento);
 
@@ -725,11 +726,11 @@ namespace ProyectoBases
                 }
             }
         }
-
+        int siguienteId = 5;
         // Método para obtener el siguiente IdVentaAsiento
         private int ObtenerSiguienteIdVentaAsiento()
         {
-            int siguienteId = 1;
+            
 
             string query = "SELECT ISNULL(MAX(IdVentaAsiento), 0) + 1 FROM VentaAsiento";
 

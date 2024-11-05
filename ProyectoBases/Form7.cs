@@ -276,6 +276,7 @@ namespace ProyectoBases
                 string nombreSala = cbsala.Text;
                 string nombrePelicula = cbpelicula.Text;
                 string sesion = cbsesion.Text;
+                int idSesion = (int)cbsesion.SelectedValue;
                 List<(string fila, int numero)> asientosComprados = new List<(string fila, int numero)>();
                 // Lista para almacenar los asientos comprados en orden
                 List<DataGridViewRow> filasARemover = new List<DataGridViewRow>();
@@ -334,7 +335,7 @@ namespace ProyectoBases
                 // Llamar al método para registrar en la bitácora
                 int idBitacoraTransaccion = ObtenerSiguienteIdBitacora(); // Método para obtener el siguiente ID para la bitácora
                 RegistrarCompraEnBitacora(idBitacoraTransaccion, asientosComprados, idSala, nombreSala, nombrePelicula, sesion);
-
+                RegistrarVentaAsientos(nuevoIdTransaccion, asientosComprados, idSesion, siguienteId);
             }
             else
             {
@@ -366,11 +367,11 @@ namespace ProyectoBases
                 }
             }
         }
-
+        int nuevoIdTransaccion = 0;
         // Método para insertar una transacción en la tabla Transaccion y obtener el nuevo IdTransaccion
         private int RegistrarTransaccion(int idTipoAsignacion)
         {
-            int nuevoIdTransaccion = 0;
+            
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -479,7 +480,95 @@ namespace ProyectoBases
             form5.ShowDialog();
         }
          private List<(string fila, int numero)> asientosSeleccionados = new List<(string fila, int numero)>();
+        private void RegistrarVentaAsientos(int idTransaccion, List<(string fila, int numero)> asientosComprados, int idSesion, int idventaasiento)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+                INSERT INTO VentaAsiento (IdVentaAsiento, IdTransaccion, IdSesion, IdAsiento)
+                VALUES (@IdVentaAsiento, @IdTransaccion, @IdSesion, @IdAsiento)";
 
-      
+                connection.Open();
+
+                foreach (var asiento in asientosComprados)
+                {
+                    int idAsiento = ObtenerIdAsiento(asiento.fila, asiento.numero, idSesion);
+
+                    if (idAsiento != -1) // Verificar que el asiento existe
+                    {
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            // Obtener el siguiente IdVentaAsiento
+                            int idVentaAsiento = ObtenerSiguienteIdVentaAsiento();
+
+                            // Asignar los parámetros
+                            command.Parameters.AddWithValue("@IdVentaAsiento", siguienteId);
+                            command.Parameters.AddWithValue("@IdTransaccion", nuevoIdTransaccion);
+                            command.Parameters.AddWithValue("@IdSesion", idSesion);
+                            command.Parameters.AddWithValue("@IdAsiento", idAsiento);
+
+                            // Ejecutar la inserción
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"El asiento {asiento.fila}{asiento.numero} no existe en la sesión {idSesion}.");
+                    }
+                }
+            }
+        }
+        int siguienteId = 5;
+        // Método para obtener el siguiente IdVentaAsiento
+        private int ObtenerSiguienteIdVentaAsiento()
+        {
+
+
+            string query = "SELECT ISNULL(MAX(IdVentaAsiento), 0) + 1 FROM VentaAsiento";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    siguienteId = Convert.ToInt32(result);
+                }
+            }
+
+            return siguienteId;
+        }
+
+        // Método para obtener el Id del Asiento basado en la fila y el número
+        private int ObtenerIdAsiento(string fila, int numero, int idSesion)
+        {
+            int idAsiento = -1;
+
+            string query = @"
+        SELECT a.IdAsiento
+        FROM Asiento a
+        INNER JOIN SesionAsiento sa ON a.IdAsiento = sa.IdAsiento
+        WHERE a.Fila = @Fila AND a.Numero = @Numero AND sa.IdSesion = @IdSesion";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Fila", fila);
+                command.Parameters.AddWithValue("@Numero", numero);
+                command.Parameters.AddWithValue("@IdSesion", idSesion);
+
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    idAsiento = Convert.ToInt32(result);
+                }
+            }
+
+            return idAsiento;
+        }
+
     }
 }

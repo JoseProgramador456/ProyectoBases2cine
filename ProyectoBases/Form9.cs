@@ -73,11 +73,11 @@ namespace ProyectoBases
 
                     // Cambiar el estado de los asientos a 0 en SesionAsiento
                     string queryActualizarAsientos = @"
-                UPDATE SesionAsiento
-                SET Estado = 0
-                FROM SesionAsiento with (updlock, holdlock)
-                INNER JOIN VentaAsiento ON SesionAsiento.IdAsiento = VentaAsiento.IdAsiento
-                WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
+                    UPDATE SesionAsiento
+                    SET Estado = 0
+                    FROM SesionAsiento with (updlock, holdlock)
+                    INNER JOIN VentaAsiento ON SesionAsiento.IdAsiento = VentaAsiento.IdAsiento
+                    WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
 
                     using (SqlCommand command = new SqlCommand(queryActualizarAsientos, connection))
                     {
