@@ -479,6 +479,7 @@ namespace ProyectoBases
             form5.ShowDialog();
         }
          private List<(string fila, int numero)> asientosSeleccionados = new List<(string fila, int numero)>();
-        
+
+      
     }
 }

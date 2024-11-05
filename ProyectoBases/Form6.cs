@@ -385,7 +385,7 @@ namespace ProyectoBases
                         // Llamar al método para registrar en la bitácora
                         int idBitacoraTransaccion = ObtenerSiguienteIdBitacora(); // Método para obtener el siguiente ID para la bitácora
                         RegistrarCompraEnBitacora(idBitacoraTransaccion, asientosComprados, idSala, nombreSala, nombrePelicula, sesion, "");
-
+                        
                         // Remover todos los asientos comprados de la vista, incluyendo el último
                         foreach (var asiento in asientosSeleccionados)
                         {
@@ -394,9 +394,29 @@ namespace ProyectoBases
 
                         boletosRestantes = 0; // Reiniciamos el contador ya que se completó la compra
                         label8.Text = $"Cantidad de boletos restantes: {boletosRestantes}";
+                        // Ocultar los controles en caso de error
+                        label5.Visible = false;
+                        label6.Visible = false;
+                        bcomprar.Visible = false;
+                        cbfila.Visible = false;
+                        cbnumero.Visible = false;
+                        label4.Visible = false;
+                        txtcantmanual.Visible = false;
+                        bcantidadmanual.Visible = false;
+                        label2.Visible = false;
+                        cbpelicula.Visible = false;
+                        label3.Visible = false;
+                        cbsesion.Visible = false;
+                        bpelicula.Visible = false;
+                        bsesion.Visible = false;
+                        label8.Visible = false;
+                        label8.Text = "";
+                        // Remover todos los asientos comprados de la vista, incluyendo el último
+                        dgbasientos.DataSource = null;
 
                         // Limpiar la lista después de remover los asientos de la vista
                         asientosSeleccionados.Clear();
+                        
                     }
                     else
                     {

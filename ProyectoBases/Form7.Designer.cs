@@ -111,7 +111,7 @@
             // 
             this.cbsala.FormattingEnabled = true;
             this.cbsala.Location = new System.Drawing.Point(31, 41);
-            this.cbsala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbsala.Margin = new System.Windows.Forms.Padding(2);
             this.cbsala.Name = "cbsala";
             this.cbsala.Size = new System.Drawing.Size(68, 21);
             this.cbsala.TabIndex = 5;
@@ -120,7 +120,7 @@
             // 
             this.cbpelicula.FormattingEnabled = true;
             this.cbpelicula.Location = new System.Drawing.Point(31, 103);
-            this.cbpelicula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbpelicula.Margin = new System.Windows.Forms.Padding(2);
             this.cbpelicula.Name = "cbpelicula";
             this.cbpelicula.Size = new System.Drawing.Size(128, 21);
             this.cbpelicula.TabIndex = 6;
@@ -129,7 +129,7 @@
             // 
             this.cbsesion.FormattingEnabled = true;
             this.cbsesion.Location = new System.Drawing.Point(31, 160);
-            this.cbsesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbsesion.Margin = new System.Windows.Forms.Padding(2);
             this.cbsesion.Name = "cbsesion";
             this.cbsesion.Size = new System.Drawing.Size(240, 21);
             this.cbsesion.TabIndex = 7;
@@ -137,7 +137,7 @@
             // txtcantmanual
             // 
             this.txtcantmanual.Location = new System.Drawing.Point(31, 221);
-            this.txtcantmanual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcantmanual.Margin = new System.Windows.Forms.Padding(2);
             this.txtcantmanual.Multiline = true;
             this.txtcantmanual.Name = "txtcantmanual";
             this.txtcantmanual.Size = new System.Drawing.Size(61, 24);
@@ -147,7 +147,7 @@
             // 
             this.dgbasientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgbasientos.Location = new System.Drawing.Point(358, 41);
-            this.dgbasientos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgbasientos.Margin = new System.Windows.Forms.Padding(2);
             this.dgbasientos.Name = "dgbasientos";
             this.dgbasientos.RowHeadersWidth = 72;
             this.dgbasientos.RowTemplate.Height = 31;
@@ -158,7 +158,7 @@
             // 
             this.dgbcompraauto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgbcompraauto.Location = new System.Drawing.Point(31, 347);
-            this.dgbcompraauto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgbcompraauto.Margin = new System.Windows.Forms.Padding(2);
             this.dgbcompraauto.Name = "dgbcompraauto";
             this.dgbcompraauto.RowHeadersWidth = 72;
             this.dgbcompraauto.RowTemplate.Height = 31;
@@ -179,7 +179,7 @@
             // bingresar
             // 
             this.bingresar.Location = new System.Drawing.Point(114, 41);
-            this.bingresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bingresar.Margin = new System.Windows.Forms.Padding(2);
             this.bingresar.Name = "bingresar";
             this.bingresar.Size = new System.Drawing.Size(62, 23);
             this.bingresar.TabIndex = 12;
@@ -190,7 +190,7 @@
             // bpelicula
             // 
             this.bpelicula.Location = new System.Drawing.Point(170, 103);
-            this.bpelicula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bpelicula.Margin = new System.Windows.Forms.Padding(2);
             this.bpelicula.Name = "bpelicula";
             this.bpelicula.Size = new System.Drawing.Size(66, 23);
             this.bpelicula.TabIndex = 13;
@@ -201,7 +201,7 @@
             // bsesion
             // 
             this.bsesion.Location = new System.Drawing.Point(285, 160);
-            this.bsesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bsesion.Margin = new System.Windows.Forms.Padding(2);
             this.bsesion.Name = "bsesion";
             this.bsesion.Size = new System.Drawing.Size(57, 23);
             this.bsesion.TabIndex = 14;
@@ -212,7 +212,7 @@
             // bcantidadmanual
             // 
             this.bcantidadmanual.Location = new System.Drawing.Point(110, 223);
-            this.bcantidadmanual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bcantidadmanual.Margin = new System.Windows.Forms.Padding(2);
             this.bcantidadmanual.Name = "bcantidadmanual";
             this.bcantidadmanual.Size = new System.Drawing.Size(66, 22);
             this.bcantidadmanual.TabIndex = 15;
@@ -223,7 +223,7 @@
             // bcomprar
             // 
             this.bcomprar.Location = new System.Drawing.Point(31, 258);
-            this.bcomprar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bcomprar.Margin = new System.Windows.Forms.Padding(2);
             this.bcomprar.Name = "bcomprar";
             this.bcomprar.Size = new System.Drawing.Size(107, 48);
             this.bcomprar.TabIndex = 16;
@@ -234,7 +234,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(540, 451);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 28);
             this.button1.TabIndex = 17;
@@ -279,7 +279,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form7";
             this.Text = "Venta automática";
             ((System.ComponentModel.ISupportInitialize)(this.dgbasientos)).EndInit();
