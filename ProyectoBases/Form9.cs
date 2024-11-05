@@ -13,7 +13,7 @@ namespace ProyectoBases
 {
     public partial class Form9 : Form
     {
-        string connectionString = $"Data Source=DESKTOP-98VGFST\\SQLEXPRESS;Initial Catalog=ProyectoCine;User ID=Cajero;Password=12345;";
+        string connectionString = $"Data Source=DESKTOP-98VGFST\\SQLEXPRESS;Initial Catalog=ProyectoCine;User ID=Cajero;Password=Marceloco;";
 
         public Form9()
         {
@@ -75,7 +75,7 @@ namespace ProyectoBases
                     string queryActualizarAsientos = @"
                 UPDATE SesionAsiento
                 SET Estado = 0
-                FROM SesionAsiento whit (updlock, holdlock)
+                FROM SesionAsiento with (updlock, holdlock)
                 INNER JOIN VentaAsiento ON SesionAsiento.IdAsiento = VentaAsiento.IdAsiento
                 WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
 
