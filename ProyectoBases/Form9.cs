@@ -13,7 +13,7 @@ namespace ProyectoBases
 {
     public partial class Form9 : Form
     {
-        string connectionString = $"Data Source=DESKTOP-98VGFST\\SQLEXPRESS;Initial Catalog=ProyectoCine;User ID=Cajero;Password=12345;";
+        string connectionString = $"Data Source=DESKTOP-98VGFST\\SQLEXPRESS;Initial Catalog=ProyectoCine;User ID=Cajero;Password=Marceloco;";
 
         public Form9()
         {
