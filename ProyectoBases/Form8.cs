@@ -191,7 +191,7 @@ AND SesionAsiento.IdSesion = @IdSesionNueva AND SesionAsiento.Estado = 0";
                     string queryActualizarComprados = @"
             UPDATE SesionAsiento
             SET Estado = 0
-            FROM SesionAsiento
+            FROM SesionAsiento with (updlock, holdlock)
             INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
             WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero 
             AND SesionAsiento.IdSesion = @IdSesionActual";
@@ -228,7 +228,7 @@ AND SesionAsiento.IdSesion = @IdSesionNueva AND SesionAsiento.Estado = 0";
                     string queryActualizarNuevos = @"
             UPDATE SesionAsiento
             SET Estado = 1
-            FROM SesionAsiento
+            FROM SesionAsiento with (updlock, holdlock)
             INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
             WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero 
             AND SesionAsiento.IdSesion = @IdSesionNueva";
