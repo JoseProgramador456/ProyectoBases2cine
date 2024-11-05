@@ -23,6 +23,7 @@ namespace ProyectoBases
 
         private void btnCargarLogs_Click(object sender, EventArgs e)
         {
+            //holandita
             DateTime fechaInicio = dtpFechaInicio.Value;
             DateTime fechaFin = dtpFechaFin.Value;
 

@@ -37,7 +37,7 @@
             // 
             // btnBuscarTop5
             // 
-            this.btnBuscarTop5.Location = new System.Drawing.Point(129, 53);
+            this.btnBuscarTop5.Location = new System.Drawing.Point(124, 12);
             this.btnBuscarTop5.Name = "btnBuscarTop5";
             this.btnBuscarTop5.Size = new System.Drawing.Size(134, 38);
             this.btnBuscarTop5.TabIndex = 3;
@@ -48,7 +48,7 @@
             // dgvResultados
             // 
             this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultados.Location = new System.Drawing.Point(35, 107);
+            this.dgvResultados.Location = new System.Drawing.Point(35, 56);
             this.dgvResultados.Name = "dgvResultados";
             this.dgvResultados.Size = new System.Drawing.Size(320, 311);
             this.dgvResultados.TabIndex = 2;
@@ -67,13 +67,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(386, 458);
             this.Controls.Add(this.btnmenu);
             this.Controls.Add(this.btnBuscarTop5);
             this.Controls.Add(this.dgvResultados);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form15";
-            this.Text = "Form15";
+            this.Text = "Reportes ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             this.ResumeLayout(false);
 

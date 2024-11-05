@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogs = new System.Windows.Forms.Button();
             this.btnTop5 = new System.Windows.Forms.Button();
@@ -41,7 +42,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(23, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 20);
@@ -122,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(512, 326);
             this.Controls.Add(this.btnmenu);
             this.Controls.Add(this.label1);
@@ -131,8 +135,9 @@
             this.Controls.Add(this.btnSalas);
             this.Controls.Add(this.btnTransacciones);
             this.Controls.Add(this.btnListadoSesiones);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form10";
-            this.Text = "Form10";
+            this.Text = "Reportes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
