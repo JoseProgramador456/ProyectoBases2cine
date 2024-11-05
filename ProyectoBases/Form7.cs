@@ -234,13 +234,13 @@ namespace ProyectoBases
                 {
                     connection.Open();
                     string query = @"
-                SELECT A.Fila, A.Numero 
-                FROM Asiento A
-                JOIN SesionAsiento SA ON A.IdAsiento = SA.IdAsiento
-                JOIN Sesion S ON SA.IdSesion = S.IdSesion
-                WHERE S.IdSala = @IdSala 
-                  AND S.IdSesion = @IdSesion
-                  AND SA.Estado = 0;";
+                    SELECT A.Fila, A.Numero 
+                    FROM Asiento A
+                    JOIN SesionAsiento SA ON A.IdAsiento = SA.IdAsiento
+                    JOIN Sesion S ON SA.IdSesion = S.IdSesion
+                    WHERE S.IdSala = @IdSala 
+                    AND S.IdSesion = @IdSesion
+                    AND SA.Estado = 0;";
 
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@IdSala", idSala);

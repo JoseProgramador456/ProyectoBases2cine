@@ -61,7 +61,13 @@ namespace ProyectoBases
                             return;
                         }
                     }
-
+                    // Cambiar el estado de los asientos a 0 en SesionAsiento
+                    string queryActualizarAsientos = @"
+                    UPDATE SesionAsiento
+                    SET Estado = 0
+                    FROM SesionAsiento with (updlock, holdlock)
+                    INNER JOIN VentaAsiento ON SesionAsiento.IdAsiento = VentaAsiento.IdAsiento
+                    WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
                     // Si la sesión no ha comenzado, eliminar la transacción
                     string queryEliminarTransaccion = "DELETE FROM VentaAsiento WHERE IdTransaccion = @IdTransaccion";
 
@@ -71,13 +77,7 @@ namespace ProyectoBases
                         command.ExecuteNonQuery();
                     }
 
-                    // Cambiar el estado de los asientos a 0 en SesionAsiento
-                    string queryActualizarAsientos = @"
-                    UPDATE SesionAsiento
-                    SET Estado = 0
-                    FROM SesionAsiento with (updlock, holdlock)
-                    INNER JOIN VentaAsiento ON SesionAsiento.IdAsiento = VentaAsiento.IdAsiento
-                    WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
+                   
 
                     using (SqlCommand command = new SqlCommand(queryActualizarAsientos, connection))
                     {
