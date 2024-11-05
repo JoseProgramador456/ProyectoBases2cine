@@ -39,24 +39,28 @@
             // cmbNombreSala
             // 
             this.cmbNombreSala.FormattingEnabled = true;
-            this.cmbNombreSala.Location = new System.Drawing.Point(285, 39);
+            this.cmbNombreSala.Location = new System.Drawing.Point(522, 72);
+            this.cmbNombreSala.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmbNombreSala.Name = "cmbNombreSala";
-            this.cmbNombreSala.Size = new System.Drawing.Size(334, 21);
+            this.cmbNombreSala.Size = new System.Drawing.Size(609, 32);
             this.cmbNombreSala.TabIndex = 15;
             // 
             // dgvResultados
             // 
             this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultados.Location = new System.Drawing.Point(143, 135);
+            this.dgvResultados.Location = new System.Drawing.Point(262, 249);
+            this.dgvResultados.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvResultados.Name = "dgvResultados";
-            this.dgvResultados.Size = new System.Drawing.Size(514, 271);
+            this.dgvResultados.RowHeadersWidth = 72;
+            this.dgvResultados.Size = new System.Drawing.Size(942, 500);
             this.dgvResultados.TabIndex = 14;
             // 
             // btnGenerarReporte
             // 
-            this.btnGenerarReporte.Location = new System.Drawing.Point(491, 77);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(900, 142);
+            this.btnGenerarReporte.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(128, 32);
+            this.btnGenerarReporte.Size = new System.Drawing.Size(235, 59);
             this.btnGenerarReporte.TabIndex = 13;
             this.btnGenerarReporte.Text = "Generar Reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
@@ -65,17 +69,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(182, 42);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(334, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(179, 25);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nombre de la Sala:";
             // 
             // btnmenu
             // 
-            this.btnmenu.Location = new System.Drawing.Point(590, 412);
+            this.btnmenu.Location = new System.Drawing.Point(1082, 761);
+            this.btnmenu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnmenu.Name = "btnmenu";
-            this.btnmenu.Size = new System.Drawing.Size(67, 25);
+            this.btnmenu.Size = new System.Drawing.Size(123, 46);
             this.btnmenu.TabIndex = 19;
             this.btnmenu.Text = "Regresar";
             this.btnmenu.UseVisualStyleBackColor = true;
@@ -83,16 +90,18 @@
             // 
             // Form13
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.ClientSize = new System.Drawing.Size(1467, 831);
             this.Controls.Add(this.btnmenu);
             this.Controls.Add(this.cmbNombreSala);
             this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form13";
-            this.Text = "Form13";
+            this.Text = "Reportes Salas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

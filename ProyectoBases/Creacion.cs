@@ -227,5 +227,10 @@ namespace ProyectoBases
                 }
             }
         }
+
+        private void Creacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
