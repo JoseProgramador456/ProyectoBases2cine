@@ -75,9 +75,9 @@ namespace ProyectoBases
                     string queryActualizarAsientos = @"
                 UPDATE SesionAsiento
                 SET Estado = 0
-                FROM SesionAsiento
+                FROM SesionAsiento whit (updlock, holdlock)
                 INNER JOIN VentaAsiento ON SesionAsiento.IdAsiento = VentaAsiento.IdAsiento
-                WHERE VentaAsiento.IdTransaccion = @IdTransaccion";
+                WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
 
                     using (SqlCommand command = new SqlCommand(queryActualizarAsientos, connection))
                     {
