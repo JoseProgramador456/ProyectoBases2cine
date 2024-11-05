@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form14));
             this.chkGeneral = new System.Windows.Forms.CheckBox();
             this.txtPorcentaje = new System.Windows.Forms.TextBox();
             this.cmbNombreSala = new System.Windows.Forms.ComboBox();
@@ -112,6 +113,7 @@
             this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.btnBuscarSesiones);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form14";
             this.Text = "Form14";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();

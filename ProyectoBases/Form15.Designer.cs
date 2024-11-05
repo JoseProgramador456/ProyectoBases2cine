@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form15));
             this.btnBuscarTop5 = new System.Windows.Forms.Button();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
             this.btnmenu = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@
             this.Controls.Add(this.btnmenu);
             this.Controls.Add(this.btnBuscarTop5);
             this.Controls.Add(this.dgvResultados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form15";
             this.Text = "Form15";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();

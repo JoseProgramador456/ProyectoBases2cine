@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form16));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
@@ -41,6 +42,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(52, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 13);
@@ -50,6 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(52, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -66,7 +69,7 @@
             // 
             // btnCargarLogs
             // 
-            this.btnCargarLogs.Location = new System.Drawing.Point(604, 94);
+            this.btnCargarLogs.Location = new System.Drawing.Point(616, 94);
             this.btnCargarLogs.Name = "btnCargarLogs";
             this.btnCargarLogs.Size = new System.Drawing.Size(141, 28);
             this.btnCargarLogs.TabIndex = 10;
@@ -106,6 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnmenu);
             this.Controls.Add(this.label2);
@@ -114,8 +118,9 @@
             this.Controls.Add(this.btnCargarLogs);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form16";
-            this.Text = "Form16";
+            this.Text = "Reportes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
