@@ -70,6 +70,11 @@ namespace ProyectoBases
                     WHERE VentaAsiento.IdTransaccion = @IdTransaccion and SesionAsiento.Estado = 1";
                     // Si la sesión no ha comenzado, eliminar la transacción
                     string queryEliminarTransaccion = "DELETE FROM VentaAsiento WHERE IdTransaccion = @IdTransaccion";
+                    using (SqlCommand command = new SqlCommand(queryActualizarAsientos, connection))
+                    {
+                        command.Parameters.AddWithValue("@IdTransaccion", idTransaccion);
+                        command.ExecuteNonQuery();
+                    }
 
                     using (SqlCommand command = new SqlCommand(queryEliminarTransaccion, connection))
                     {
@@ -79,11 +84,6 @@ namespace ProyectoBases
 
                    
 
-                    using (SqlCommand command = new SqlCommand(queryActualizarAsientos, connection))
-                    {
-                        command.Parameters.AddWithValue("@IdTransaccion", idTransaccion);
-                        command.ExecuteNonQuery();
-                    }
 
                     MessageBox.Show("La transacción ha sido eliminada y los asientos han sido liberados.");
                 }
@@ -96,6 +96,13 @@ namespace ProyectoBases
             {
                 MessageBox.Show("Error al eliminar la transacción: " + ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3  form3= new Form3();
+            form3.ShowDialog();
+            this.Hide();
         }
     }
 }
