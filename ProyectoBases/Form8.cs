@@ -553,5 +553,12 @@ WHERE Sesion.IdSesion = @IdSesion";
             }
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+            this.Hide();
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.dgbTodo = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbTodo)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@
             // txtAsientosNuevos
             // 
             this.txtAsientosNuevos.Location = new System.Drawing.Point(25, 422);
-            this.txtAsientosNuevos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAsientosNuevos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAsientosNuevos.Multiline = true;
             this.txtAsientosNuevos.Name = "txtAsientosNuevos";
             this.txtAsientosNuevos.Size = new System.Drawing.Size(246, 39);
@@ -72,7 +73,7 @@
             // txtAsientosComprados
             // 
             this.txtAsientosComprados.Location = new System.Drawing.Point(25, 350);
-            this.txtAsientosComprados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAsientosComprados.Margin = new System.Windows.Forms.Padding(4);
             this.txtAsientosComprados.Multiline = true;
             this.txtAsientosComprados.Name = "txtAsientosComprados";
             this.txtAsientosComprados.Size = new System.Drawing.Size(246, 37);
@@ -114,7 +115,7 @@
             // txtIdSesionNueva
             // 
             this.txtIdSesionNueva.Location = new System.Drawing.Point(25, 277);
-            this.txtIdSesionNueva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdSesionNueva.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdSesionNueva.Multiline = true;
             this.txtIdSesionNueva.Name = "txtIdSesionNueva";
             this.txtIdSesionNueva.Size = new System.Drawing.Size(246, 41);
@@ -123,7 +124,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(30, 506);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 54);
             this.button1.TabIndex = 12;
@@ -134,7 +135,7 @@
             // txtIdSesionActual
             // 
             this.txtIdSesionActual.Location = new System.Drawing.Point(25, 196);
-            this.txtIdSesionActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdSesionActual.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdSesionActual.Multiline = true;
             this.txtIdSesionActual.Name = "txtIdSesionActual";
             this.txtIdSesionActual.Size = new System.Drawing.Size(246, 41);
@@ -143,7 +144,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(636, 714);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(288, 63);
             this.button2.TabIndex = 20;
@@ -155,7 +156,7 @@
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Location = new System.Drawing.Point(320, 157);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 72;
             this.dgvDatos.RowTemplate.Height = 31;
@@ -176,7 +177,7 @@
             // txtIdTrans
             // 
             this.txtIdTrans.Location = new System.Drawing.Point(598, 56);
-            this.txtIdTrans.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdTrans.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdTrans.Multiline = true;
             this.txtIdTrans.Name = "txtIdTrans";
             this.txtIdTrans.Size = new System.Drawing.Size(341, 35);
@@ -186,7 +187,7 @@
             // 
             this.dgbTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgbTodo.Location = new System.Drawing.Point(320, 463);
-            this.dgbTodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgbTodo.Margin = new System.Windows.Forms.Padding(4);
             this.dgbTodo.Name = "dgbTodo";
             this.dgbTodo.RowHeadersWidth = 72;
             this.dgbTodo.RowTemplate.Height = 31;
@@ -215,12 +216,24 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Asientos desocupados u Ocupados:";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1048, 798);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(143, 44);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Regresar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1278, 829);
+            this.ClientSize = new System.Drawing.Size(1366, 924);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgbTodo);
@@ -238,7 +251,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtIdSesionActual);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
             this.Text = "Cambio Asiento";
             this.Load += new System.EventHandler(this.Form8_Load);
@@ -267,5 +280,6 @@
         private System.Windows.Forms.DataGridView dgbTodo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button3;
     }
 }
