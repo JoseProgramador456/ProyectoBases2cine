@@ -76,7 +76,7 @@
             // 
             // btnmenu
             // 
-            this.btnmenu.Location = new System.Drawing.Point(590, 412);
+            this.btnmenu.Location = new System.Drawing.Point(668, 417);
             this.btnmenu.Name = "btnmenu";
             this.btnmenu.Size = new System.Drawing.Size(67, 25);
             this.btnmenu.TabIndex = 19;
@@ -89,7 +89,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(747, 406);
+            this.ClientSize = new System.Drawing.Size(747, 454);
             this.Controls.Add(this.btnmenu);
             this.Controls.Add(this.cmbNombreSala);
             this.Controls.Add(this.dgvResultados);

@@ -52,41 +52,51 @@
             // 
             // txtAsientosNuevos
             // 
+<<<<<<< HEAD
             this.txtAsientosNuevos.Location = new System.Drawing.Point(25, 422);
             this.txtAsientosNuevos.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.txtAsientosNuevos.Location = new System.Drawing.Point(14, 229);
+            this.txtAsientosNuevos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.txtAsientosNuevos.Multiline = true;
             this.txtAsientosNuevos.Name = "txtAsientosNuevos";
-            this.txtAsientosNuevos.Size = new System.Drawing.Size(246, 39);
+            this.txtAsientosNuevos.Size = new System.Drawing.Size(136, 23);
             this.txtAsientosNuevos.TabIndex = 19;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(25, 394);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(14, 213);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 25);
+            this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "Asientos Nuevos:";
             // 
             // txtAsientosComprados
             // 
+<<<<<<< HEAD
             this.txtAsientosComprados.Location = new System.Drawing.Point(25, 350);
             this.txtAsientosComprados.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.txtAsientosComprados.Location = new System.Drawing.Point(14, 190);
+            this.txtAsientosComprados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.txtAsientosComprados.Multiline = true;
             this.txtAsientosComprados.Name = "txtAsientosComprados";
-            this.txtAsientosComprados.Size = new System.Drawing.Size(246, 37);
+            this.txtAsientosComprados.Size = new System.Drawing.Size(136, 22);
             this.txtAsientosComprados.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(25, 322);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(14, 174);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 25);
+            this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Asientos Comprados:";
             // 
@@ -94,10 +104,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(25, 246);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(14, 133);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 25);
+            this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "ID Sesión nueva:";
             // 
@@ -105,28 +115,38 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(25, 161);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(14, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 25);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "ID Sesión actual:";
             // 
             // txtIdSesionNueva
             // 
+<<<<<<< HEAD
             this.txtIdSesionNueva.Location = new System.Drawing.Point(25, 277);
             this.txtIdSesionNueva.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.txtIdSesionNueva.Location = new System.Drawing.Point(14, 150);
+            this.txtIdSesionNueva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.txtIdSesionNueva.Multiline = true;
             this.txtIdSesionNueva.Name = "txtIdSesionNueva";
-            this.txtIdSesionNueva.Size = new System.Drawing.Size(246, 41);
+            this.txtIdSesionNueva.Size = new System.Drawing.Size(136, 24);
             this.txtIdSesionNueva.TabIndex = 13;
             // 
             // button1
             // 
+<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(30, 506);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.button1.Location = new System.Drawing.Point(16, 274);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 54);
+            this.button1.Size = new System.Drawing.Size(129, 29);
             this.button1.TabIndex = 12;
             this.button1.Text = "Cambio de Asiento";
             this.button1.UseVisualStyleBackColor = true;
@@ -134,19 +154,29 @@
             // 
             // txtIdSesionActual
             // 
+<<<<<<< HEAD
             this.txtIdSesionActual.Location = new System.Drawing.Point(25, 196);
             this.txtIdSesionActual.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.txtIdSesionActual.Location = new System.Drawing.Point(14, 106);
+            this.txtIdSesionActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.txtIdSesionActual.Multiline = true;
             this.txtIdSesionActual.Name = "txtIdSesionActual";
-            this.txtIdSesionActual.Size = new System.Drawing.Size(246, 41);
+            this.txtIdSesionActual.Size = new System.Drawing.Size(136, 24);
             this.txtIdSesionActual.TabIndex = 11;
             // 
             // button2
             // 
+<<<<<<< HEAD
             this.button2.Location = new System.Drawing.Point(636, 714);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.button2.Location = new System.Drawing.Point(347, 387);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(288, 63);
+            this.button2.Size = new System.Drawing.Size(157, 34);
             this.button2.TabIndex = 20;
             this.button2.Text = "Mostrar detalle de sesiones y asientos";
             this.button2.UseVisualStyleBackColor = true;
@@ -155,53 +185,68 @@
             // dgvDatos
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.dgvDatos.Location = new System.Drawing.Point(320, 157);
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.dgvDatos.Location = new System.Drawing.Point(175, 85);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 72;
             this.dgvDatos.RowTemplate.Height = 31;
-            this.dgvDatos.Size = new System.Drawing.Size(871, 227);
+            this.dgvDatos.Size = new System.Drawing.Size(475, 123);
             this.dgvDatos.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(698, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(381, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 25);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "ID Transacción:";
             // 
             // txtIdTrans
             // 
+<<<<<<< HEAD
             this.txtIdTrans.Location = new System.Drawing.Point(598, 56);
             this.txtIdTrans.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.txtIdTrans.Location = new System.Drawing.Point(326, 30);
+            this.txtIdTrans.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.txtIdTrans.Multiline = true;
             this.txtIdTrans.Name = "txtIdTrans";
-            this.txtIdTrans.Size = new System.Drawing.Size(341, 35);
+            this.txtIdTrans.Size = new System.Drawing.Size(188, 21);
             this.txtIdTrans.TabIndex = 23;
             // 
             // dgbTodo
             // 
             this.dgbTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.dgbTodo.Location = new System.Drawing.Point(320, 463);
             this.dgbTodo.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.dgbTodo.Location = new System.Drawing.Point(175, 251);
+            this.dgbTodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.dgbTodo.Name = "dgbTodo";
             this.dgbTodo.RowHeadersWidth = 72;
             this.dgbTodo.RowTemplate.Height = 31;
-            this.dgbTodo.Size = new System.Drawing.Size(871, 227);
+            this.dgbTodo.Size = new System.Drawing.Size(475, 123);
             this.dgbTodo.TabIndex = 24;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(631, 118);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(344, 64);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(254, 25);
+            this.label6.Size = new System.Drawing.Size(139, 13);
             this.label6.TabIndex = 25;
             this.label6.Text = "Datos sobre su transaccion:";
             // 
@@ -209,10 +254,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(610, 405);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(333, 219);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(329, 25);
+            this.label7.Size = new System.Drawing.Size(178, 13);
             this.label7.TabIndex = 26;
             this.label7.Text = "Asientos desocupados u Ocupados:";
             // 
@@ -229,11 +274,15 @@
             // 
             // Form8
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1366, 924);
             this.Controls.Add(this.button3);
+=======
+            this.ClientSize = new System.Drawing.Size(697, 425);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgbTodo);
@@ -251,7 +300,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtIdSesionActual);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+>>>>>>> adb0a204f87bd6a26764f9733526e77b3f0d8eef
             this.Name = "Form8";
             this.Text = "Cambio Asiento";
             this.Load += new System.EventHandler(this.Form8_Load);

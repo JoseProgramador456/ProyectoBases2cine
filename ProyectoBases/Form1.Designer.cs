@@ -56,9 +56,9 @@
             this.label2.Location = new System.Drawing.Point(113, 48);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Usuario";
+            this.label2.Text = "Usuario:";
             // 
             // label3
             // 
@@ -68,9 +68,9 @@
             this.label3.Location = new System.Drawing.Point(104, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Contaseña";
+            this.label3.Text = "Contaseña:";
             // 
             // txtUsuario
             // 
@@ -80,6 +80,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(91, 27);
             this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtContrasenia
             // 
@@ -89,6 +90,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(91, 26);
             this.txtContrasenia.TabIndex = 4;
+            this.txtContrasenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -116,7 +118,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = " ";
+            this.Text = " CINEPABLO";
             this.ResumeLayout(false);
             this.PerformLayout();
 
