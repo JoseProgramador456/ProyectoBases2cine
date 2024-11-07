@@ -22,9 +22,44 @@ namespace ProyectoBases
 
         private void Form8_Load(object sender, EventArgs e)
         {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"
+            SELECT DISTINCT S.IdSesion
+            FROM Sesion S
+            WHERE S.Estado = 0"; // Filtra solo sesiones activas (estado 0)
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Establecemos los datos en el ComboBox
+                    cbsesion.DataSource = dataTable;
+                    cbsesion.DisplayMember = "Sesion"; // Campo que se muestra
+                    cbsesion.ValueMember = "IdSesion"; // Campo de valor
+
+                    // Seleccionar la opción vacía para que el ComboBox aparezca vacío inicialmente
+                    if (dataTable.Rows.Count > 0)
+                        cbsesion.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al llenar cbsesion: " + ex.Message);
+                }
+            }
+
 
         }
-      
+        private void LlenarComboBoxSesiones(int idSeccion)
+        {
+            
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -497,7 +532,7 @@ WHERE Sesion.IdSesion = @IdSesion";
 
                     // Obtener información de la sesión y asientos asociados
                     string query = @"
-                SELECT Pelicula.Nombre, Sesion.FechaInicio, Asiento.Fila, Asiento.Numero
+                SELECT Pelicula.Nombre, Sesion.FechaInicio, Asiento.Fila, Asiento.Numero,ventaAsiento.IdSesion
                 FROM VentaAsiento
                 INNER JOIN Sesion ON VentaAsiento.IdSesion = Sesion.IdSesion
                 INNER JOIN Pelicula ON Sesion.IdPelicula = Pelicula.IdPelicula
@@ -514,32 +549,6 @@ WHERE Sesion.IdSesion = @IdSesion";
 
                         // Mostrar los datos en el primer DataGridView
                         dgvDatos.DataSource = dataTable;
-                    }
-
-                    // Consulta para obtener todos los asientos y su estado
-                    string queryAsientos = @"
-            SELECT 
-                Asiento.Fila,
-                Asiento.Numero,
-                CASE WHEN SesionAsiento.Estado = 1 THEN 'Ocupado' ELSE 'Disponible' END AS Estado
-            FROM 
-                SesionAsiento
-            INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
-            WHERE 
-                SesionAsiento.IdSesion = (
-                    SELECT IdSesion FROM VentaAsiento WHERE IdTransaccion = @IdTransaccion
-                )";
-
-                    using (SqlCommand commandAsientos = new SqlCommand(queryAsientos, connection))
-                    {
-                        commandAsientos.Parameters.AddWithValue("@IdTransaccion", idTransaccion);
-
-                        SqlDataAdapter adapterAsientos = new SqlDataAdapter(commandAsientos);
-                        DataTable dataTableAsientos = new DataTable();
-                        adapterAsientos.Fill(dataTableAsientos);
-
-                        // Mostrar los asientos con su estado en el segundo DataGridView
-                        dgbTodo.DataSource = dataTableAsientos;
                     }
                 }
             }
@@ -559,6 +568,50 @@ WHERE Sesion.IdSesion = @IdSesion";
             Form3 form3 = new Form3();
             form3.ShowDialog();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Verificamos que haya una selección válida en el ComboBox
+            if (cbsesion.SelectedValue != null && int.TryParse(cbsesion.SelectedValue.ToString(), out int idSesion))
+            {
+                // Llamamos al método para mostrar los asientos libres en el DataGridView
+                MostrarAsientosLibres(idSesion);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una sesión válida.");
+            }
+        }
+        // Método para mostrar los asientos libres en el DataGridView
+        private void MostrarAsientosLibres(int idSesion)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"
+                SELECT A.Fila, A.Numero, SA.Estado
+                FROM SesionAsiento SA
+                INNER JOIN Asiento A ON SA.IdAsiento = A.IdAsiento
+                WHERE SA.IdSesion = @IdSesion AND SA.Estado = 0"; // Estado 0 para asientos libres
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@IdSesion", idSesion);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Establecemos los datos en el DataGridView
+                    dgbTodo.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al mostrar los asientos libres: " + ex.Message);
+                }
+            }
         }
     }
 }
