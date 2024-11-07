@@ -353,7 +353,7 @@ namespace ProyectoBases
                 {
                     string query = @"UPDATE SesionAsiento
                              SET Estado = 1
-                             FROM SesionAsiento
+                             FROM SesionAsiento with (Updlock, Holdlock)
                              INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
                              WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero and SesionAsiento.IdSesion = @IdSesion";
 
