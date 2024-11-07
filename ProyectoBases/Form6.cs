@@ -44,7 +44,7 @@ namespace ProyectoBases
 
             //TextoBox
             txtcantmanual.Visible = false;
-            
+
             //Metodo llenar ComboBox
             LlenarComboBoxSalas();
         }
@@ -416,7 +416,7 @@ namespace ProyectoBases
 
                         // Limpiar la lista después de remover los asientos de la vista
                         asientosSeleccionados.Clear();
-                        
+
                     }
                     else
                     {
@@ -503,7 +503,7 @@ namespace ProyectoBases
             bcomprar.Enabled = false;
         }
 
-               
+
         private bool ConfirmarCompra(int idSesion, int idSala)
         {
 
@@ -583,7 +583,7 @@ namespace ProyectoBases
         int nuevoIdTransaccion = 0;
         private int RegistrarTransaccion(int idTipoAsignacion)
         {
-            
+
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -731,7 +731,7 @@ namespace ProyectoBases
         // Método para obtener el siguiente IdVentaAsiento
         private int ObtenerSiguienteIdVentaAsiento()
         {
-            
+
 
             string query = "SELECT ISNULL(MAX(IdVentaAsiento), 0) + 1 FROM VentaAsiento";
 
@@ -781,4 +781,3 @@ namespace ProyectoBases
     }
 
 }
-

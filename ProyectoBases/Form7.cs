@@ -359,26 +359,19 @@ namespace ProyectoBases
                                      SET Estado = 1
                                      FROM SesionAsiento WITH (UPDLOCK, HOLDLOCK)
                                      INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
-                                     WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero 
-                                     AND SesionAsiento.IdSesion = @IdSesion AND SesionAsiento.Estado = 0"; // Verifica que el asiento esté disponible
+                                     WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero AND SesionAsiento.IdSesion = @IdSesion";
 
-                            using (SqlCommand command = new SqlCommand(query, connection, transaction))
+                            using (SqlCommand command = new SqlCommand(query, connection))
                             {
+                                command.Transaction = transaction; // Asigna la transacción al comando
                                 command.Parameters.AddWithValue("@Fila", asiento.fila);
                                 command.Parameters.AddWithValue("@Numero", asiento.numero);
                                 command.Parameters.AddWithValue("@IdSesion", idSesion); // Pasa idSesion como parámetro
 
-                                // Ejecuta la actualización y verifica si realmente se realizó
-                                int rowsAffected = command.ExecuteNonQuery();
-                                if (rowsAffected != 1)
-                                {
-                                    // Mensaje específico si el asiento ya está siendo comprado
-                                    MessageBox.Show($"El asiento {asiento.fila}{asiento.numero} ya está en proceso de compra por otro usuario. Intenta con otro asiento.", "Asiento ocupado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    throw new Exception("Asiento en proceso de compra por otro usuario o ya no está disponible.");
-                                }
+                                command.ExecuteNonQuery();
                             }
                         }
-                        transaction.Commit(); // Confirma la transacción si todos los asientos se actualizaron correctamente
+                        transaction.Commit(); // Confirma la transacción si todo salió bien
                     }
                     catch (Exception ex)
                     {
@@ -412,7 +405,7 @@ namespace ProyectoBases
         // Método para insertar una transacción en la tabla Transaccion y obtener el nuevo IdTransaccion
         private int RegistrarTransaccion(int idTipoAsignacion)
         {
-            
+
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -520,7 +513,7 @@ namespace ProyectoBases
             Form5 form5 = new Form5();
             form5.ShowDialog();
         }
-         private List<(string fila, int numero)> asientosSeleccionados = new List<(string fila, int numero)>();
+        private List<(string fila, int numero)> asientosSeleccionados = new List<(string fila, int numero)>();
         private void RegistrarVentaAsientos(int idTransaccion, List<(string fila, int numero)> asientosComprados, int idSesion, int idventaasiento)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
