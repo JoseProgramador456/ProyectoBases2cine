@@ -63,7 +63,7 @@ namespace ProyectoBases
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            // Obtener el rango de fechas y horas del usuario
+             // Obtener el rango de fechas y horas del usuario
             DateTime fechaInicio = dtpFechaInicio.Value;
             DateTime fechaFin = dtpFechaFin.Value;
 

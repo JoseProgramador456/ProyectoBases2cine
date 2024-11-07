@@ -385,7 +385,7 @@ namespace ProyectoBases
                         // Llamar al método para registrar en la bitácora
                         int idBitacoraTransaccion = ObtenerSiguienteIdBitacora(); // Método para obtener el siguiente ID para la bitácora
                         RegistrarCompraEnBitacora(idBitacoraTransaccion, asientosComprados, idSala, nombreSala, nombrePelicula, sesion, "");
-                        RegistrarVentaAsientos(nuevoIdTransaccion, asientosSeleccionados, idSesion,siguienteId);
+                        RegistrarVentaAsientos(nuevoIdTransaccion, asientosSeleccionados, idSesion, siguienteId);
                         // Remover todos los asientos comprados de la vista, incluyendo el último
                         foreach (var asiento in asientosSeleccionados)
                         {
@@ -423,8 +423,7 @@ namespace ProyectoBases
                         MessageBox.Show("Hubo un error en la compra. Ningún boleto fue comprado.");
 
                         // Recargar todos los asientos disponibles en dgvasientos
-                        CargarAsientosDisponibles(idSesion);
-
+                        dgbasientos.DataSource = null;
                         // Ocultar los controles en caso de error
                         label5.Visible = false;
                         label6.Visible = false;
@@ -444,7 +443,9 @@ namespace ProyectoBases
                         label8.Text = "";
                         // Limpiar la lista temporal
                         asientosSeleccionados.Clear();
-
+                        this.Close();
+                        Form5 form5 = new Form5();
+                        form5.Show();
 
                     }
                 }
