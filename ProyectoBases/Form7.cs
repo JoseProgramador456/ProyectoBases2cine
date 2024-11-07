@@ -356,19 +356,22 @@ namespace ProyectoBases
                         foreach (var asiento in asientosComprados)
                         {
                             string query = @"UPDATE SesionAsiento
-                             SET Estado = 1
-                             FROM SesionAsiento with (Updlock, Holdlock)
-                             INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
-                             WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero and SesionAsiento.IdSesion = @IdSesion";
+                                     SET Estado = 1
+                                     FROM SesionAsiento WITH (UPDLOCK, HOLDLOCK)
+                                     INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
+                                     WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero AND SesionAsiento.IdSesion = @IdSesion";
 
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
+                                command.Transaction = transaction; // Asigna la transacción al comando
                                 command.Parameters.AddWithValue("@Fila", asiento.fila);
                                 command.Parameters.AddWithValue("@Numero", asiento.numero);
                                 command.Parameters.AddWithValue("@IdSesion", idSesion); // Pasa idSesion como parámetro
+
                                 command.ExecuteNonQuery();
                             }
                         }
+                        transaction.Commit(); // Confirma la transacción si todo salió bien
                     }
                     catch (Exception ex)
                     {
@@ -376,27 +379,27 @@ namespace ProyectoBases
                         MessageBox.Show("Excepción durante la transacción: " + ex.Message);
 
                         // Reiniciar completamente el estado del formulario para un nuevo intento de compra
-                        label1.Visible=false;
-                        cbsala.Visible=false;
-                        bingresar.Visible=false;
-                        label2.Visible=false;
+                        label1.Visible = false;
+                        cbsala.Visible = false;
+                        bingresar.Visible = false;
+                        label2.Visible = false;
                         cbpelicula.Visible = false;
-                        bpelicula.Visible=false;
-                        label3.Visible=false;
-                        cbsesion.Visible=false;
-                        bsesion.Visible=false;
-                        label4.Visible=false;
-                        txtcantmanual.Visible=false;
-                        bcantidadmanual.Visible=false;
-                        bcomprar.Visible=false;
-                        label6.Visible=false;
-                        dgbcompraauto.Visible=false;
+                        bpelicula.Visible = false;
+                        label3.Visible = false;
+                        cbsesion.Visible = false;
+                        bsesion.Visible = false;
+                        label4.Visible = false;
+                        txtcantmanual.Visible = false;
+                        bcantidadmanual.Visible = false;
+                        bcomprar.Visible = false;
+                        label6.Visible = false;
+                        dgbcompraauto.Visible = false;
                         dgbasientos.DataSource = null;
-                        
                     }
                 }
             }
         }
+
 
         int nuevoIdTransaccion = 0;
         // Método para insertar una transacción en la tabla Transaccion y obtener el nuevo IdTransaccion
