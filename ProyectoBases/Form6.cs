@@ -536,7 +536,7 @@ namespace ProyectoBases
                             {
                                 // Mensaje específico si el asiento ya está siendo comprado
                                 MessageBox.Show($"El asiento {asiento.fila}{asiento.numero} ya está en proceso de compra por otro usuario. Intenta con otro asiento.", "Asiento ocupado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                throw new Exception("Asiento en proceso de compra por otro usuario.");
+                                throw new Exception("Asiento en proceso de compra por otro usuario. O el asiento no esta disponible");
                             }
                         }
 
