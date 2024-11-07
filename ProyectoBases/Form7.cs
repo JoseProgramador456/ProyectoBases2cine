@@ -359,19 +359,26 @@ namespace ProyectoBases
                                      SET Estado = 1
                                      FROM SesionAsiento WITH (UPDLOCK, HOLDLOCK)
                                      INNER JOIN Asiento ON SesionAsiento.IdAsiento = Asiento.IdAsiento
-                                     WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero AND SesionAsiento.IdSesion = @IdSesion";
+                                     WHERE Asiento.Fila = @Fila AND Asiento.Numero = @Numero 
+                                     AND SesionAsiento.IdSesion = @IdSesion AND SesionAsiento.Estado = 0"; // Verifica que el asiento esté disponible
 
-                            using (SqlCommand command = new SqlCommand(query, connection))
+                            using (SqlCommand command = new SqlCommand(query, connection, transaction))
                             {
-                                command.Transaction = transaction; // Asigna la transacción al comando
                                 command.Parameters.AddWithValue("@Fila", asiento.fila);
                                 command.Parameters.AddWithValue("@Numero", asiento.numero);
                                 command.Parameters.AddWithValue("@IdSesion", idSesion); // Pasa idSesion como parámetro
 
-                                command.ExecuteNonQuery();
+                                // Ejecuta la actualización y verifica si realmente se realizó
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected != 1)
+                                {
+                                    // Mensaje específico si el asiento ya está siendo comprado
+                                    MessageBox.Show($"El asiento {asiento.fila}{asiento.numero} ya está en proceso de compra por otro usuario. Intenta con otro asiento.", "Asiento ocupado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    throw new Exception("Asiento en proceso de compra por otro usuario o ya no está disponible.");
+                                }
                             }
                         }
-                        transaction.Commit(); // Confirma la transacción si todo salió bien
+                        transaction.Commit(); // Confirma la transacción si todos los asientos se actualizaron correctamente
                     }
                     catch (Exception ex)
                     {
