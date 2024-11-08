@@ -19,7 +19,7 @@ namespace ProyectoBases
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra Form5 y vuelve a mostrar Form1
+            this.Hide(); // Cierra Form5 y vuelve a mostrar Form1
             Form6 form6 = new Form6();
             form6.ShowDialog();
         }
@@ -33,7 +33,7 @@ namespace ProyectoBases
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra Form5 y vuelve a mostrar Form1
+            this.Hide(); // Cierra Form5 y vuelve a mostrar Form1
             Form3 form3 = new Form3();
             form3.ShowDialog();
         }

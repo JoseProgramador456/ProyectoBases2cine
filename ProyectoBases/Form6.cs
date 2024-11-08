@@ -576,7 +576,7 @@ namespace ProyectoBases
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra Form6 y vuelve a mostrar Form1
+            this.Hide(); // Cierra Form6 y vuelve a mostrar Form1
             Form5 form5 = new Form5();
             form5.ShowDialog();
         }
